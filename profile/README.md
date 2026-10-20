@@ -7,7 +7,7 @@
 Contentrain turns hardcoded UI copy, docs, and structured content into a **Git-native system that AI agents can safely operate**.
 Start locally with open-source MCP, CLI, and SDK packages. Add **Studio** when teams need review, roles, media, and delivery.
 
-[Website](https://contentrain.io) · [Developer Docs](https://ai.contentrain.io) · [Studio Docs](https://docs.contentrain.io) · [Open Studio](https://studio.contentrain.io) · [Pricing](https://contentrain.io/pricing)
+[Website](https://contentrain.io) · [Developer Docs](https://ai.contentrain.io) · [Studio Docs](https://docs.contentrain.io) · [Open Studio](https://studio.contentrain.io) · [WordPress to Astro: Migrate](https://migrate.contentrain.io) · [Pricing](https://contentrain.io/pricing)
 
 [![npm: @contentrain/mcp](https://img.shields.io/npm/v/%40contentrain%2Fmcp?label=%40contentrain%2Fmcp)](https://www.npmjs.com/package/@contentrain/mcp)
 [![npm: contentrain](https://img.shields.io/npm/v/contentrain?label=contentrain)](https://www.npmjs.com/package/contentrain)
