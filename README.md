@@ -6,8 +6,8 @@ opensource: "Yes"
 license: "MIT (packages) / AGPL-3.0 (Studio core)"
 typeofcms: "Git-based"
 supportedgenerators:
-  - NuxtJs
-  - NextJs
+  - Nuxt
+  - Next.js
   - Astro
   - SvelteKit
   - Remix
@@ -22,7 +22,7 @@ supportedgenerators:
   - Svelte
   - Angular
   - All
-description: Contentrain is Git-native content governance for AI-built products. Open-source MCP, CLI, and SDK packages let AI agents extract and operate structured content in Git; Studio adds team review, roles, media, and delivery.
+description: Contentrain is a content governance ecosystem for teams and AI agents. Open-source MCP, CLI, and SDK packages let AI agents extract and operate structured content in Git; Studio adds team review, roles, media, and delivery; Bridge and Migrate bring WordPress sites in.
 ---
 
 # Contentrain — organization meta
@@ -35,14 +35,16 @@ This repository holds GitHub organization-level defaults for [@Contentrain](http
 
 **Govern the content your AI ships into code.**
 
-Contentrain turns hardcoded UI copy, docs, and structured content into a Git-native system that AI agents can safely operate. Agents generate, humans approve, and Git records every change.
+Contentrain is a content governance ecosystem for teams and AI agents. It turns hardcoded UI copy, docs, and structured content into a Git-native system that AI agents can safely operate. Agents generate, humans approve, and Git records every change.
 
-Two surfaces, one content contract:
+Four parts, one content contract:
 
 | Surface | Repo | License | What it does |
 |---|---|---|---|
-| **Contentrain AI** | [`Contentrain/ai`](https://github.com/Contentrain/ai) | MIT | Local-first operating core — 24 MCP tools, CLI, typed query SDK, agent rules and skills |
-| **Contentrain Studio** | [`Contentrain/studio`](https://github.com/Contentrain/studio) | AGPL-3.0 core | Team operations and delivery — chat, structured editing, review, media, CDN, APIs |
+| **Open-source tools** | [`Contentrain/ai`](https://github.com/Contentrain/ai) | MIT | Local-first packages — 27 MCP tools, CLI, typed query SDK, agent rules and skills |
+| **Studio** | [`Contentrain/studio`](https://github.com/Contentrain/studio) | AGPL-3.0 core | Team operating surface — chat, structured editing, review, roles, media, CDN, APIs |
+| **Migrate** | [migrate.contentrain.io](https://migrate.contentrain.io) | Paid service | Moves a WordPress site to Astro, with its content and template structure |
+| **Bridge** | [`Contentrain/wordpress-bridge`](https://github.com/Contentrain/wordpress-bridge) | GPL-2.0-or-later | Free WordPress plugin — exports content as a Contentrain store, as a ZIP or to your GitHub |
 
 ```bash
 npx contentrain init     # create the .contentrain/ workspace

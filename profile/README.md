@@ -1,13 +1,14 @@
 <div align="center">
 
-<img src="https://contentrain.io/og-image.png" alt="Contentrain — Git-native content governance for AI-built products" width="880" />
+<img src="https://raw.githubusercontent.com/Contentrain/.github/main/profile/cover.png" alt="Contentrain — content governance for teams and AI agents" width="880" />
 
 ### Govern the content your AI ships into code.
 
-Contentrain turns hardcoded UI copy, docs, and structured content into a **Git-native system that AI agents can safely operate**.
-Start locally with open-source MCP, CLI, and SDK packages. Add **Studio** when teams need review, roles, media, and delivery.
+Contentrain is a **content governance ecosystem for teams and AI agents**. Content lives in Git as structured JSON and Markdown.
+Start locally with the open-source MCP, CLI, and SDK packages. Add **Studio** when teams need review, roles, media, and delivery.
+Moving off WordPress? **Bridge** exports your content for free, and **Migrate** moves the whole site to Astro.
 
-[Website](https://contentrain.io) · [Developer Docs](https://ai.contentrain.io) · [Studio Docs](https://docs.contentrain.io) · [Open Studio](https://studio.contentrain.io) · [WordPress to Astro: Migrate](https://migrate.contentrain.io) · [Pricing](https://contentrain.io/pricing)
+[Website](https://contentrain.io) · [Developer Docs](https://ai.contentrain.io) · [Studio Docs](https://docs.contentrain.io) · [Open Studio](https://studio.contentrain.io) · [Migrate](https://migrate.contentrain.io) · [Bridge](https://wordpress.org/plugins/contentrain-bridge/) · [Pricing](https://contentrain.io/pricing)
 
 [![npm: @contentrain/mcp](https://img.shields.io/npm/v/%40contentrain%2Fmcp?label=%40contentrain%2Fmcp)](https://www.npmjs.com/package/@contentrain/mcp)
 [![npm: contentrain](https://img.shields.io/npm/v/contentrain?label=contentrain)](https://www.npmjs.com/package/contentrain)
@@ -22,7 +23,7 @@ Start locally with open-source MCP, CLI, and SDK packages. Add **Studio** when t
 
 ## Agent generates. Human approves. Git records every change.
 
-Most teams don't wake up needing a CMS. They wake up with hardcoded copy spread across components, no translation path, and AI agents editing strings directly in source files.
+Most teams don't wake up needing a new content platform. They wake up with hardcoded copy spread across components, no translation path, and AI agents editing strings directly in source files.
 
 Contentrain puts a governed content layer between the agent and your repository:
 
@@ -43,15 +44,15 @@ npx contentrain serve    # open the local review UI
 
 No account, no cloud, no proprietary content format. You now have models, validation, review branches, and a local UI.
 
-## Two surfaces, one content contract
+## Four parts, one content contract
 
-| | **Contentrain AI** | **Contentrain Studio** |
-|---|---|---|
-| **What it is** | Local-first, open-source operating core | Open-core team operations & delivery web app |
-| **Who it's for** | Developers and AI coding agents | Editors, reviewers, and cross-functional teams |
-| **Surface** | MCP, CLI, SDK, types, rules, skills | Chat, structured editing, review, media, CDN, APIs |
-| **License** | MIT | AGPL-3.0 core + separately licensed enterprise modules |
-| **Repo** | [`Contentrain/ai`](https://github.com/Contentrain/ai) | [`Contentrain/studio`](https://github.com/Contentrain/studio) |
+| | **Open-source tools** | **Studio** | **Migrate** | **Bridge** |
+|---|---|---|---|---|
+| **What it is** | Local-first packages for developers and agents | Team operating surface for governed content | Service that moves a WordPress site to Astro | Free WordPress plugin |
+| **Who it's for** | Developers and AI coding agents | Editors, reviewers, and cross-functional teams | WordPress site owners leaving WordPress | WordPress sites that want their content in Git |
+| **What you get** | MCP, CLI, SDK, types, rules, skills | Chat, structured editing, review, roles, media, CDN, APIs | An Astro project with its content and template structure, delivered to your GitHub or as a ZIP | Content and interface text as a validated Contentrain store, as a ZIP or to your GitHub |
+| **License** | MIT | AGPL-3.0 core + separately licensed `ee/` | Paid service | GPL-2.0-or-later |
+| **Where** | [`Contentrain/ai`](https://github.com/Contentrain/ai) | [`Contentrain/studio`](https://github.com/Contentrain/studio) | [migrate.contentrain.io](https://migrate.contentrain.io) | [`Contentrain/wordpress-bridge`](https://github.com/Contentrain/wordpress-bridge) · [WordPress.org](https://wordpress.org/plugins/contentrain-bridge/) |
 
 Typical path: `contentrain init` → normalize hardcoded content → review branches → invite teammates into Studio → deliver through CDN/API when needed.
 
@@ -59,12 +60,13 @@ Typical path: `contentrain init` → normalize hardcoded content → review bran
 
 | Package | Role |
 |---|---|
-| [`@contentrain/mcp`](https://github.com/Contentrain/ai/tree/main/packages/mcp) | **24 MCP tools** over stdio or HTTP, with Local / GitHub / GitLab providers |
+| [`@contentrain/mcp`](https://github.com/Contentrain/ai/tree/main/packages/mcp) | **27 MCP tools** over stdio or HTTP, with Local / GitHub / GitLab providers (the 5 media tools need a provider with a media stack, such as Studio) |
 | [`contentrain`](https://github.com/Contentrain/ai/tree/main/packages/cli) | CLI, local Serve review UI, and MCP stdio entrypoint |
 | [`@contentrain/query`](https://github.com/Contentrain/ai/tree/main/packages/sdk/js) | Generated, fully typed query SDK |
 | [`@contentrain/types`](https://github.com/Contentrain/ai/tree/main/packages/types) | Shared type definitions and constants |
 | [`@contentrain/rules`](https://github.com/Contentrain/ai/tree/main/packages/rules) | Agent quality rules and schema guardrails |
-| [`@contentrain/skills`](https://github.com/Contentrain/ai/tree/main/packages/skills) | **15 Agent Skills** — workflow playbooks for AI agents |
+| [`@contentrain/wp-import`](https://github.com/Contentrain/ai/tree/main/packages/wp-import) | WordPress content into a Contentrain store (`contentrain import`) |
+| [`@contentrain/skills`](https://github.com/Contentrain/ai/tree/main/packages/skills) | **16 Agent Skills** — workflow playbooks for AI agents |
 
 MCP works with Claude Code, Claude Desktop, Cursor, Windsurf, Codex, and any MCP-compatible client.
 
@@ -120,7 +122,7 @@ const labels  = dictionary('ui-labels').locale('tr').get('auth.login')
 const article = document('docs').locale('en').bySlug('getting-started')
 ```
 
-Works with Nuxt, Next.js, Astro, SvelteKit, Vue, React, Node, Go, Python, Swift, Flutter, and 20+ stacks.
+`contentrain init` recognizes 29 stacks, from Nuxt, Next.js, Astro, and SvelteKit to Django, Rails, Laravel, Go, and Flutter. Any language that reads JSON and Markdown can read the content.
 
 ## Starter templates
 
@@ -158,6 +160,7 @@ The AGPL Studio core is also [self-hostable](https://contentrain.io/self-hosted)
 - **AI-native teams** — govern the copy your coding agents create instead of letting it scatter through source
 - **Agencies** — one repeatable content workflow across every client project
 - **Content teams** — editors change content without developers losing Git control
+- **WordPress sites** — export content with Bridge, or move the whole site to Astro with Migrate
 - **Platform teams** — one content contract for web, docs, mobile, and APIs
 
 ## Docs
@@ -177,3 +180,5 @@ Contributions are welcome — see [CONTRIBUTING.md](https://github.com/Contentra
 
 - **Packages** ([`Contentrain/ai`](https://github.com/Contentrain/ai)) — MIT
 - **Studio core** ([`Contentrain/studio`](https://github.com/Contentrain/studio)) — AGPL-3.0, with separately licensed enterprise modules in `ee/`
+- **Bridge** ([`Contentrain/wordpress-bridge`](https://github.com/Contentrain/wordpress-bridge)) — GPL-2.0-or-later
+- **Migrate** ([migrate.contentrain.io](https://migrate.contentrain.io)) — paid service
