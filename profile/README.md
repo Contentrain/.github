@@ -70,6 +70,8 @@ Typical path: `contentrain init` → normalize hardcoded content → review bran
 
 MCP works with Claude Code, Claude Desktop, Cursor, Windsurf, Codex, and any MCP-compatible client.
 
+No local server to run? [MCP Cloud](https://docs.contentrain.io/developer/mcp-cloud) is Studio's hosted MCP endpoint: an agent connects over HTTP with a project key, with no checkout and no MCP server of its own.
+
 ## Normalize — the fastest way in
 
 **Before** — copy is trapped in components. No structure, no locales, no review.
